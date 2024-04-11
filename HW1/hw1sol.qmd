@@ -1,0 +1,148 @@
+---
+title: "Biostat 202B Homework 1"
+subtitle: Due April 11, 2024 @ 11:59PM
+author: Hanbei Xiong 605257780
+format:
+  html:
+    theme: cosmo
+    embed-resources: true
+    number-sections: false
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    code-fold: false
+knitr:
+  opts_chunk: 
+    cache: false    
+    echo: true
+    fig.align: 'center'
+    fig.width: 6
+    fig.height: 4
+    message: FALSE
+---
+
+# Question 1
+
+![](images/WeChat2d673d96ae72e5e52e329f001ccdd0d9.png)
+
+**(a) Answer:**
+
+Let $g(x)=\sqrt{x}$, g is continuous for $x\geq 0$.
+
+Since $P(X_i >0)=1$ for all i, all $X_i$ are greater than 0.
+
+Since $X_n\rightarrow a$ in probability,
+
+$Y_n = \sqrt{X_n} = g(X_n) \rightarrow \sqrt{a}$ in probability by C.M.T
+
+Let $q(x)=\frac{a}{x}$, q is continuous for $x > 0$.
+
+Since $X_n\rightarrow a$ in probability,
+
+$Y_n' = q(X_n)=\frac{a}{X_n}\rightarrow \frac{a}{a}=1$ in probability by C.M.T
+
+**(b) Answer:**
+
+Since $S_n^2\rightarrow \sigma^2$ in probability
+
+$S_n = \sqrt{S_n^2}$
+
+Hence, by part (a)
+
+$S_n\rightarrow \sqrt{\sigma^2}=\sigma$ in probability
+
+$\frac{\sigma}{S_n}\rightarrow \frac{\sigma}{\sigma}=1$ in probability
+
+# Question 2
+
+![](images/WeChatba035a8772d3dc78e300bd3780a2b156.png){width="3300" height="113"}
+
+**(a) Answer:**
+
+Since $Var(X_n)\rightarrow 0$ in probability
+
+$(X_n-E(X_n))^2\rightarrow 0$ in probability
+
+$X_n-E(X_n)\rightarrow 0$ in probability
+
+Since $E(X_n)\rightarrow \mu$ in probability
+
+$X_n\rightarrow \mu$ in probability for $n\rightarrow \infty$
+
+# Question 3
+
+![](images/WeChat423e22ea81e8644cff83eef35f7c043a.png){width="1612"}
+
+**Answer:**
+
+$\mu = E(X)=\int_{-1}^{1}x\frac{1}{2}(1+\theta x)dx=(\frac{x^2}{4}+\frac{\theta x^3}{6})\Big|_{-1}^{1}=\frac{2\theta}{6}$
+
+Then, $\theta = 3\mu$
+
+Since $\bar{X}_n\rightarrow \mu$ in probability by WLLN,
+
+$3\bar{X}_n\rightarrow 3\mu=\theta$ in probability
+
+Hence, $3\bar{X}_n$ is a consistent estimator of $\theta$
+
+# Question 4
+
+![](images/WeChat0bbd52026af18c59ee0ee1f450804d74.png){width="1612"}
+
+**(a) Answer:**
+
+$E(Y_n)=np$ and $Var(Y_n)=np(1-p)$
+
+$E(\frac{Y_n}{n})=\frac{np}{n}=p$ and $Var(\frac{Y_n}{n})=\frac{np(1-p)}{n^2}=\frac{p(1-p)}{n}$
+
+By Chebyshev inequality:
+
+```{=tex}
+\begin{align}
+P(|\frac{Y_n}{n}-p|>\epsilon)&=P(|\frac{Y_n}{n}-E(\frac{Y_n}{n})|>\epsilon) \\
+&\leq\frac{Var(\frac{Y_n}{n})}{\epsilon^2}\\
+&=\frac{p(1-p)}{n\epsilon^2}\rightarrow 0 \text{, as n goes large}
+\end{align}
+```
+Since $P(|\frac{Y_n}{n}-p|>\epsilon)\geq 0$,
+
+$P(|\frac{Y_n}{n}-p|>\epsilon)\rightarrow 0$ in probability because it is squeezed on both sides of inequalities.
+
+Hence, $\frac{Y_n}{n}\rightarrow p$ in probability.
+
+**(b) Answer:**
+
+$Var(1-\frac{Y_n}{n})=\frac{p(1-p)}{n}$
+
+```{=tex}
+\begin{align}
+P(|1-\frac{Y_n}{n}-(1-p)|<\epsilon)&=P(|1-\frac{Y_n}{n}-E(1-\frac{Y_n}{n})|<\epsilon)\\
+&\geq \frac{Var(1-\frac{Y_n}{n})}{\epsilon^2}\\
+&=\frac{p(1-p)}{n \epsilon^2}\rightarrow 0 \text{ in probability} 
+\end{align}
+```
+Since $P(|1-\frac{Y_n}{n}-(1-p)|<\epsilon)\geq 0$,
+
+Then, $1-\frac{Y_n}{n}\rightarrow 1-p$ in probability.
+
+**(c) Answer:**
+
+Let $g(x)=x(1-x)$ be continuous for all x
+
+then, $\frac{Y_n}{n}(1-\frac{Y_n}{n})=g(\frac{Y_n}{n})= g(p)\rightarrow p(1-p)$ in probability by C.M.T
+
+# Question 5
+
+![](images/WeChat13fa8e0cafc91567772775c6dbb90140.png){width="1612"}
+
+**Answer:**
+
+Since p\>0,
+
+$P(|W_n-\mu|>\epsilon)=P(|W_n-E(W_n)|>\epsilon)\leq \frac{Var(W_n)}{\epsilon^2}=\frac{b}{n^p\epsilon^2}\rightarrow 0$ in probability
+
+Since $P(|W_n-\mu|>\epsilon)\geq 0$
+
+$P(|W_n-\mu|>\epsilon)\rightarrow 0$ in probability because it is squeezed on both sides
+
+Hence, $W_n\rightarrow \mu$ in probability
