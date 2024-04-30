@@ -3238,8 +3238,7 @@ window.Quarto = {
 <section id="question-2" class="level1">
 <h1>Question 2</h1>
 <p><strong>Answer:</strong> <span class="math display">\[\begin{align*}
-f_{Y(i),Y(j)}(y,z)&amp;=P(Y_{(i)}=y,Y_{(j)}=z)\\
-&amp;=lim_{\Delta y\to \infty, \Delta z\to \infty}\frac{P(\text{i-1 }Y_t&#39;s&lt;y, \text{ one }Y_t\in (y,y+\Delta y),\text{ j-i-1 }Y_t&#39;s &gt;y+\Delta y \text{ and }&lt;z, \text{ one }Y_t\in (z,z+\Delta z),\text{ n-j } Y_t&#39;s &gt;z+\Delta z)}{\Delta y \Delta z}\\
+f_{Y(i),Y(j)}(y,z)&amp;=lim_{\Delta y\to \infty, \Delta z\to \infty}\frac{P(\text{i-1 }Y_t&#39;s&lt;y, \text{ one }Y_t\in (y,y+\Delta y),\text{ j-i-1 }Y_t&#39;s &gt;y+\Delta y \text{ and }&lt;z, \text{ one }Y_t\in (z,z+\Delta z),\text{ n-j } Y_t&#39;s &gt;z+\Delta z)}{\Delta y \Delta z}\\
 &amp;={n \choose i-1}{n-i+1 \choose j-i-1}{n-i+1-j+i+1 \choose n-j}F_X(y)^{i-1}\{F_X{(z)-F_X(y)}\}^{j-i-1}\{1-F_X(z)\}^{n-j}f_X(y)f_X(z)\\
 &amp;=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}F_X(y)^{i-1}\{F_X{(z)-F_X(y)}\}^{j-i-1}\{1-F_X(z)\}^{n-j}f_X(y)f_X(z) \text{, for} -\infty&lt;y&lt;z&lt;\infty
 \end{align*}\]</span></p>
@@ -3258,7 +3257,8 @@ f_{V,R}(v,r)&amp;=f_{X_{(1)},X_{(n)}}(rv,r)|J(v,r)|\\
 &amp;=\frac{n!}{(n-2)!}(\frac{r}{\theta}-\frac{rv}{\theta})^{n-2}\frac{r}{\theta^2}\\
 &amp;=\frac{n!}{(n-2)!}\frac{r^{n-1}}{\theta^n}(1-v)^{n-2}\text{, for } 0&lt;r&lt;\theta \text{, } 0&lt;v&lt;1
 \end{align*}\]</span></p>
-<p>Therefore, V and R are independent and <span class="math inline">\(\frac{X_{(1)}}{X_{(n)}} \perp X_{(n)}\)</span></p>
+<p>Since <span class="math inline">\(f_{V,R}(v,r)=f_V(v)f_R(r) \text{, for } 0&lt;r&lt;\theta \text{, } 0&lt;v&lt;1\)</span>, V and R are independent</p>
+<p>Hence, <span class="math inline">\(\frac{X_{(1)}}{X_{(n)}} \perp X_{(n)}\)</span></p>
 </section>
 <section id="question-4" class="level1">
 <h1>Question 4</h1>
