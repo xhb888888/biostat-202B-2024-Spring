@@ -1,0 +1,220 @@
+---
+title: "Biostat 202B Homework 2"
+subtitle: Due April 18, 2024 @ 11:59PM
+author: Hanbei Xiong 605257780
+format:
+  html:
+    theme: cosmo
+    embed-resources: true
+    number-sections: false
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    code-fold: false
+knitr:
+  opts_chunk: 
+    cache: false    
+    echo: true
+    fig.align: 'center'
+    fig.width: 6
+    fig.height: 4
+    message: FALSE
+---
+
+# Question 1
+
+![](images/WeChatbb0d8fc93d416fb444a789bb25004e96.png)
+
+**Answer:**
+
+```{=tex}
+\begin{align*}
+nS_{n}^2 &= \sum_{i=1}^{n} (X_i-\bar{X})^2 \\
+&= \sum_{i=1}^{n} ((X_i-\mu)-(\bar{X}-\mu))^2 \\
+&= \sum_{i=1}^{n} ((X_i-\mu)^2 - 2(X_i-\mu)(\bar{X}-\mu) + (\bar{X}-\mu)^2) \\
+&= \sum_{i=1}^{n} (X_i-\mu)^2 - 2(\bar{X}-\mu)\sum_{i=1}^{n} (X_i-\mu) + n(\bar{X}-\mu)^2 \\
+&= \sum_{i=1}^{n} (X_i-\mu)^2 - 2n(\bar{X}-\mu)^2 + n(\bar{X}-\mu)^2 \\
+&= \sum_{i=1}^{n} (X_i-\mu)^2 - n(\bar{X}-\mu)^2
+\end{align*}
+```
+Hence, $S_n^2=\frac{1}{n}\sum_{i=1}^{n} (X_i-\mu)^2 - (\bar{X}-\mu)^2$
+
+Let $Y_i=(X_i-\mu)^2$, then $E(Y_i)=\mu_y=\sigma^2$
+
+$Var(Y_i)=E(X_i-\mu)^4-\{E(X_i-\mu)^2\}^2=E(X_i-\mu_x)^4-\sigma^4$
+
+Since $\gamma = \frac{E(X_i-\mu_x)^4}{\sigma^4}$
+
+$Var(Y_i)=\sigma^4(\gamma-1)$
+
+$S_n^2=\frac{1}{n}\sum_{i=1}^{n} Y_i - (\bar{X}-\mu)^2=\bar{Y}-(\bar{X}-\mu)^2$
+
+Consider $\sqrt{n}(S_n^2-\sigma_x^2)=\sqrt{n}\{\bar{Y}-(\bar{X}-\mu)^2-\sigma_x^2\}=\sqrt{n}\{\bar{Y}-(\bar{X}-\mu)^2-\mu_y\}=\sqrt{n}(\bar{Y}-\mu_y)-\sqrt{n}(\bar{X}-\mu)^2$
+
+By CLT, $\sqrt{n}(\bar{Y}-\mu_y)\overset{D}{\rightarrow}\sigma_yZ\sim N(0,\sigma_y^2)$
+
+By CLT, $\sqrt{n}(\bar{X}-\mu)\overset{D}{\rightarrow}N(0,\sigma^2)$
+
+By slutsky, $\bar{X}-\mu = \frac{1}{\sqrt{n}}\sqrt{n}(\bar{X}-\mu)\overset{P}{\rightarrow}0$
+
+By C.M.T, $\sqrt{n}(S_n^2-\sigma_x^2)\overset{D}{\rightarrow}N(0,\sigma^4(\gamma-1))$
+
+# Question 2
+
+![](images/WeChat8a7218fa5d43ec3b02de109635fb06a6.png)
+
+**Answer:**
+
+Since $\frac{1}{\sqrt{n}}\rightarrow 0$ as $n\rightarrow \infty$, we have
+
+$Y_n-\theta \rightarrow 0$ as $n\rightarrow \infty$.
+
+$Y_n\rightarrow \theta$ in probability. (Note: There is a typo in the question)
+
+# Question 3
+
+![](images/WeChatcf6436f715fc94561dd3e0347b1fb732.png)
+
+**Answer:**
+
+By WLLN, $\bar{X} \overset{P}{\rightarrow} p$
+
+$E(X)=p$ and $Var(X)=p(1-p)$
+
+By CLT,
+
+$\frac{\sqrt{n}(\bar{X}-p)}{\sqrt{p(1-p)}} \overset{D}{\rightarrow} N(0,1)$
+
+Since $\frac{p(1-p)}{\sqrt{\bar{X}(1-\bar{X})}}\overset{P}{\rightarrow}1$
+
+$\frac{\sqrt{n}(\bar{X}-p)}{\sqrt{\bar{X}(1-\bar{X})}} \overset{D}{\rightarrow} N(0,1)$
+
+$P(|\frac{\sqrt{n}(\bar{X}-p)}{\sqrt{\bar{X}(1-\bar{X})}}|\leq 1.96)=0.95$
+
+$P(-1.96\leq \frac{\sqrt{n}(\bar{X}-p)}{\sqrt{\bar{X}(1-\bar{X})}}\leq 1.96)=0.95$
+
+$P(\frac{-1.96\sqrt{\bar{X}(1-\bar{X})}}{\sqrt{n}}\leq \bar{X}-p\leq \frac{1.96\sqrt{\bar{X}(1-\bar{X})}}{\sqrt{n}})=0.95$
+
+$P(\bar{X}-\frac{1.96\sqrt{\bar{X}(1-\bar{X})}}{\sqrt{n}}\leq p\leq \bar{X}+\frac{1.96\sqrt{\bar{X}(1-\bar{X})}}{\sqrt{n}})=0.95$
+
+Hence, 95% asymptotic CI for p is $(\bar{X}-\frac{1.96\sqrt{\bar{X}(1-\bar{X})}}{\sqrt{n}}, \bar{X}+\frac{1.96\sqrt{\bar{X}(1-\bar{X})}}{\sqrt{n}})$
+
+# Question 4
+
+![](images/WeChatced7f5ac7391fba18ddafc0ce9a0786f.png)
+
+![](images/WeChat09fcf42ca2f8c77104c6ae92c715e35c.png){width="167" height="21"}
+
+**Answer:**
+
+Let $N=n+m$, $\gamma$ is Kurtosis of X
+
+By WLLN and C.M.T,
+
+$\sqrt{N}\sqrt{\frac{S_X^2}{n}+\frac{S_Y^2}{m}}=\sqrt{\frac{S_X^2}{n/N}+\frac{S_Y^2}{m/N}}\overset{P}{\rightarrow}\sqrt{\frac{\sigma_X^2}{\gamma}+\frac{\sigma_Y^2}{1-\gamma}}$
+
+$\sqrt{N}\{\bar{X}-\bar{Y}-(\mu_X-\mu_Y)\}=\sqrt{\frac{N}{n}}\sqrt{n}(\bar{X}-\mu_X)-\sqrt{\frac{N}{m}}\sqrt{m}(\bar{Y}-\mu_Y)$
+
+Then,
+
+```{=tex}
+\begin{align*}
+M(t)&=E(e^{t\sqrt{\frac{N}{n}}\sqrt{n}(\bar{X}-\mu_X)-t\sqrt{\frac{N}{m}}\sqrt{m}(\bar{Y}-\mu_Y)})\\
+&=E\{e^{t\sqrt{\frac{N}{n}}\sigma_X\frac{\sqrt{n}(\bar{X}-\mu_X)}{\sigma_X}}\}E\{e^{t\sqrt{\frac{N}{m}}\sigma_Y\frac{\sqrt{m}(\bar{Y}-\mu_Y)}{\sigma_Y}}\}\\
+&=M_Z(t\sqrt{\frac{1}{\gamma}}\sigma_X)M_Z(t\sqrt{\frac{1}{1-\gamma}\sigma_Y})\\
+&=e^{\frac{t^2}{2}(\frac{\sigma_X^2}{\gamma}+\frac{\sigma_Y^2}{1-\gamma})} \text{,  }\forall t
+\end{align*}
+```
+Hence,
+
+$\sqrt{N}\{\bar{X}-\bar{Y}-(\mu_X-\mu_Y)\}\overset{D}{\rightarrow}N(0,\frac{\sigma_X^2}{\gamma}+\frac{\sigma_Y^2}{1-\gamma})$
+
+By combining the above results,
+
+$\frac{\bar{X}-\bar{Y}-(\mu_X-\mu_Y)}{\sqrt{\frac{S_X^2}{n}+\frac{S_Y^2}{m}}}\overset{D}{\rightarrow}Z\sim N(0,1)$
+
+# Question 5
+
+![](images/WeChat75d07e25c2e1701111d95e3fbd1e123a.png)
+
+**(a) Answer:**
+
+Since $X_i \sim Poisson(\theta)$,
+
+BY WLLN,
+
+$\frac{\sqrt{n}(\bar{X}-\theta)}{\sqrt{\theta}} \overset{D}{\rightarrow} N(0,1)$
+
+$\sqrt{n}\{\bar{X}-\theta\} \overset{D}{\rightarrow} N(0,\theta)$
+
+**(b) Answer:**
+
+By delta method,
+
+$\sqrt{n}\{g(\bar{X})-g(\theta)\} \overset{D}{\rightarrow} N(0,\theta^2(g'(\theta))^2)$
+
+# Question 6
+
+![](images/WeChat4083c7db7d2ba8b7c6e5579d5556c114.png)
+
+![](images/WeChata36ef4caa6ec9b0e8ae8568bb93f21ea.png)
+
+**(a) Answer:**
+
+To ensure $[g'(\theta)]^2\sigma^2(\theta)=1$, we need $g'(\theta)=\frac{1}{\sqrt{\sigma^2}}$
+
+Since $X_1,X_2,...,X_n \overset{\text{i.i.d.}}{\sim} Exponential(\frac{1}{\theta})$
+
+Then, $\sigma^2=\theta^2$
+
+$g'(\theta)=\frac{1}{\sqrt{\theta^2}}=\frac{1}{\theta}$
+
+$g(\theta)=\ln(\theta)$
+
+Hence, $g(X_n)=\ln(X_n)$ is the variance stabilizing transformation.
+
+**(b) Answer:**
+
+Similarly, we need $g'(\theta)=\frac{1}{\sqrt{\sigma^2}}$
+
+Since $X_1,X_2,...,X_n \overset{\text{i.i.d.}}{\sim} Poisson(\theta)$
+
+Then, $\sigma^2=\theta$
+
+$g'(\theta)=\frac{1}{\sqrt{\theta}}$
+
+$g(\theta)=2\sqrt{\theta}$
+
+Hence, $g(X_n)=2\sqrt{X_n}$ is the variance stabilizing transformation.
+
+**(c) Answer:**
+
+Similarly, we need $g'(\theta)=\frac{1}{\sqrt{\sigma^2}}$
+
+Since $X_1,X_2,...,X_n \overset{\text{i.i.d.}}{\sim} Bernoulli(\theta)$
+
+Then, $\sigma^2=\theta(1-\theta)$
+
+$g'(\theta)=\frac{1}{\sqrt{\theta(1-\theta)}}$
+
+$g(\theta)=\arcsin(2\theta-1)$
+
+Hence, $g(X_n)=\arcsin(2X_n-1)$ is the variance stabilizing transformation.
+
+**(d) Answer:**
+
+$\sqrt{n}(X_n-\theta) \overset{D}{\rightarrow} N(0,\sigma^2)$
+
+After transformation, we have
+
+$\sqrt{n}(2\sqrt{X_n}-2\sqrt{\theta}) \overset{D}{\rightarrow} N(0,1)$
+
+$P(-1.96\leq \sqrt{n}(2\sqrt{X_n}-2\sqrt{\theta})\leq 1.96)=0.95$
+
+$P(\frac{-1.96}{\sqrt{n}}\leq 2\sqrt{X_n}-2\sqrt{\theta}\leq\frac{1.96}{\sqrt{n}})=0.95$
+
+$P(\frac{-1.96}{2\sqrt{n}}\leq \sqrt{X_n}-\sqrt{\theta}\leq\frac{1.96}{2\sqrt{n}})=0.95$
+
+$P(\sqrt{X_n}-\frac{1.96}{2\sqrt{n}}\leq \sqrt{\theta}\leq\sqrt{X_n}+\frac{1.96}{2\sqrt{n}})=0.95$
+
+$P((\sqrt{X_n}-\frac{1.96}{2\sqrt{n}})^2\leq \theta\leq(\sqrt{X_n}+\frac{1.96}{2\sqrt{n}})^2)=0.95$

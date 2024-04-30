@@ -1,0 +1,102 @@
+---
+title: "Biostat 202B Homework 3"
+subtitle: Due April 30, 2024 @ 11:59PM
+author: Hanbei Xiong 605257780
+format:
+  html:
+    theme: cosmo
+    embed-resources: true
+    number-sections: false
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    code-fold: false
+knitr:
+  opts_chunk: 
+    cache: false    
+    echo: true
+    fig.align: 'center'
+    fig.width: 6
+    fig.height: 4
+    message: FALSE
+---
+
+# Question 1
+
+![](images/WeChatd644baa8a1da7300b4b5b3e43e35dc7d.png)
+
+**(a) Answer:**
+
+By definition, we know the pdf of ith order statistic is:
+
+$f_{W_i}(x)=\frac{n!}{(i-1)!(n-i)!}F_X(x)^{i-1}(1-F_X(x))^{n-i}f_X(x)$
+
+Since $X_i \sim U(0,1)$
+
+$f(x)=1$ for $0\leq x \leq 1$
+
+$F(x)=x$ for $0\leq x \leq 1$
+
+$f_{W_r}(x)=\frac{n!}{(i-1)!(n-r)!}x^{r-1}(1-x)^{n-r}$ for $0\leq x \leq 1$
+
+**(b) Answer:**
+
+$E[W_1]=\int_{0}^{1}w\frac{n!}{(1-1)!(n-1)!}w^{1-1}(1-w)^{n-1}dw=\int_{0}^{1}nw(1-w)^{n-1}dw=\frac{1}{n+1}$
+
+$E[W_n]=\int_{0}^{1}w\frac{n!}{(n-1)!(n-n)!}w^{n-1}(1-w)^{n-n}dw=\int_{0}^{1}nw^{n}dw=\frac{n}{n+1}$
+
+**(c) Answer:**
+
+There are only 3! combinations of cases to form the order.
+
+Therefore, $P(X_1<X_2<X_3)=\frac{1}{6}$
+
+# Question 2
+
+**Answer:**
+\begin{align*}
+f_{Y(i),Y(j)}(y,z)&=P(Y_{(i)}=y,Y_{(j)}=z)\\
+&=lim_{\Delta y\to \infty, \Delta z\to \infty}\frac{P(\text{i-1 }Y_t's<y, \text{ one }Y_t\in (y,y+\Delta y),\text{ j-i-1 }Y_t's >y+\Delta y \text{ and }<z, \text{ one }Y_t\in (z,z+\Delta z),\text{ n-j } Y_t's >z+\Delta z)}{\Delta y \Delta z}\\
+&={n \choose i-1}{n-i+1 \choose j-i-1}{n-i+1-j+i+1 \choose n-j}F_X(y)^{i-1}\{F_X{(z)-F_X(y)}\}^{j-i-1}\{1-F_X(z)\}^{n-j}f_X(y)f_X(z)\\
+&=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}F_X(y)^{i-1}\{F_X{(z)-F_X(y)}\}^{j-i-1}\{1-F_X(z)\}^{n-j}f_X(y)f_X(z) \text{, for} -\infty<y<z<\infty
+\end{align*}
+
+# Question 3
+
+![](images/WeChat3679ff754cc284179ea6d0b85948760b.png)
+
+**Answer:**
+
+Let $V=\frac{X_{(1)}}{X_{(n)}}$, $R = X_{(n)}$
+
+Then, $X_{(1)}=RV$, $X_{(n)}=R$
+
+$J(V,R)=\begin{vmatrix} \frac{\partial X_{(1)}}{\partial V} & \frac{\partial X_{(1)}}{\partial R} \\ \frac{\partial X_{(n)}}{\partial V} & \frac{\partial X_{(n)}}{\partial R} \end{vmatrix}=\begin{vmatrix} R & V \\ 0 & 1 \end{vmatrix}=R$
+
+\begin{align*}
+f_{V,R}(v,r)&=f_{X_{(1)},X_{(n)}}(rv,r)|J(v,r)|\\
+&=f_{X_{(1)},X_{(n)}}(rv,r)r\\
+&=\frac{n!}{(n-2)!}\{F_X{(r)-F_X(rv)}\}^{n-2}f_X(rv)f_X(r)r\\
+&=\frac{n!}{(n-2)!}(\frac{r}{\theta}-\frac{rv}{\theta})^{n-2}\frac{r}{\theta^2}\\
+&=\frac{n!}{(n-2)!}\frac{r^{n-1}}{\theta^n}(1-v)^{n-2}\text{, for } 0<r<\theta \text{, } 0<v<1
+\end{align*}
+
+Therefore, V and R are independent and $\frac{X_{(1)}}{X_{(n)}} \perp X_{(n)}$
+
+# Question 4
+
+![](images/WeChata3595fcd0feebcc0014f1774c71eff9b.png)
+
+**Answer:**
+
+This is non regular model since $f(x;\theta)\geq 0$
+
+For $X = 0$: The MLE of $\theta$ is 1 since $f(0 | 1) = \frac{1}{3}$ is the largest probability of observing $X = 0$.
+
+For $X = 1$: Similarly, the MLE of $\theta$ is 1.
+
+For $X = 2$: The MLE of $\theta$ is 2 or 3, as both $f(2 | 2)$ and $f(2 | 3)$ are $\frac{1}{4}$.
+
+For $X = 3$: The MLE of $\theta$ is 3 since $f(3 | 3) = \frac{1}{2}$ is the largest.
+
+For $X = 4$: The MLE of $\theta$ is 3 as well since $f(4 | 3) = \frac{1}{4}$ is the largest
