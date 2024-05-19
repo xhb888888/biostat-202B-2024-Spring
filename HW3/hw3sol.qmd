@@ -53,8 +53,7 @@ Therefore, $P(X_1<X_2<X_3)=\frac{1}{6}$
 
 # Question 2
 
-**Answer:**
-\begin{align*}
+**Answer:** \begin{align*}
 f_{Y(i),Y(j)}(y,z)&=lim_{\Delta y\to \infty, \Delta z\to \infty}\frac{P(\text{i-1 }Y_t's<y, \text{ one }Y_t\in (y,y+\Delta y),\text{ j-i-1 }Y_t's >y+\Delta y \text{ and }<z, \text{ one }Y_t\in (z,z+\Delta z),\text{ n-j } Y_t's >z+\Delta z)}{\Delta y \Delta z}\\
 &={n \choose i-1}{n-i+1 \choose j-i-1}{n-i+1-j+i+1 \choose n-j}F_X(y)^{i-1}\{F_X{(z)-F_X(y)}\}^{j-i-1}\{1-F_X(z)\}^{n-j}f_X(y)f_X(z)\\
 &=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}F_X(y)^{i-1}\{F_X{(z)-F_X(y)}\}^{j-i-1}\{1-F_X(z)\}^{n-j}f_X(y)f_X(z) \text{, for} -\infty<y<z<\infty
@@ -72,6 +71,7 @@ Then, $X_{(1)}=RV$, $X_{(n)}=R$
 
 $J(V,R)=\begin{vmatrix} \frac{\partial X_{(1)}}{\partial V} & \frac{\partial X_{(1)}}{\partial R} \\ \frac{\partial X_{(n)}}{\partial V} & \frac{\partial X_{(n)}}{\partial R} \end{vmatrix}=\begin{vmatrix} R & V \\ 0 & 1 \end{vmatrix}=R$
 
+```{=tex}
 \begin{align*}
 f_{V,R}(v,r)&=f_{X_{(1)},X_{(n)}}(rv,r)|J(v,r)|\\
 &=f_{X_{(1)},X_{(n)}}(rv,r)r\\
@@ -79,8 +79,8 @@ f_{V,R}(v,r)&=f_{X_{(1)},X_{(n)}}(rv,r)|J(v,r)|\\
 &=\frac{n!}{(n-2)!}(\frac{r}{\theta}-\frac{rv}{\theta})^{n-2}\frac{r}{\theta^2}\\
 &=\frac{n!}{(n-2)!}\frac{r^{n-1}}{\theta^n}(1-v)^{n-2}\text{, for } 0<r<\theta \text{, } 0<v<1
 \end{align*}
-
-Since $f_{V,R}(v,r)=f_V(v)f_R(r) \text{, for } 0<r<\theta \text{, } 0<v<1$, V and R are independent 
+```
+Since $f_{V,R}(v,r)=f_V(v)f_R(r) \text{, for } 0<r<\theta \text{, } 0<v<1$, V and R are independent
 
 Hence, $\frac{X_{(1)}}{X_{(n)}} \perp X_{(n)}$
 

@@ -1,0 +1,62 @@
+---
+title: "Biostat 202B Homework 5"
+subtitle: Due May 23, 2024 @ 11:59PM
+author: Hanbei Xiong 605257780
+format:
+  html:
+    theme: cosmo
+    embed-resources: true
+    number-sections: false
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    code-fold: false
+knitr:
+  opts_chunk: 
+    cache: false    
+    echo: true
+    fig.align: 'center'
+    fig.width: 6
+    fig.height: 4
+    message: FALSE
+---
+
+# Question 1
+
+![](images/WeChatf2018f305e409ae93206e9350fe85aaf.png)
+
+**Answer:**
+
+
+# Question 2
+
+![](images/WeChat740c4ec38f20bd35ab9a009fba0bcc07.png)
+**Answer:**
+
+
+# Question 3
+
+![](images/WeChatb185e424f704b4e63c468a354de3a3a4.png)
+
+**(a) Answer:**
+
+**(b) Answer:**
+
+# Question 4
+
+![](images/WeChate1450646a4be8affad719f9e6a45b51a.png)
+
+
+**(a) Answer:**
+
+**(b) Answer:**
+
+# Question 5
+
+![](images/WeChatd7cb6f827df0c95a19c57ffac31febdf.png)
+
+**(a) Answer:**
+
+**(b) Answer:**
+
+**(c) Answer:**
